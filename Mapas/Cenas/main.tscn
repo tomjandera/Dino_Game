@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8t5p6ibntjjv"]
+
+[ext_resource type="PackedScene" uid="uid://cvkmwkjutl4hg" path="res://Mapas/Cenas/bg.tscn" id="1_immhq"]
+[ext_resource type="Script" path="res://Main.gd" id="1_tun0f"]
+[ext_resource type="PackedScene" uid="uid://dgcnlpavvml5n" path="res://Mapas/Cenas/hud.tscn" id="2_obqrg"]
+[ext_resource type="PackedScene" uid="uid://8lm1ryoii6bj" path="res://Mapas/Cenas/dino.tscn" id="3_aelm2"]
+[ext_resource type="PackedScene" uid="uid://g6abfh76423r" path="res://Mapas/Cenas/ground.tscn" id="5_n8kxl"]
+[ext_resource type="PackedScene" uid="uid://bn1jka5xgwef2" path="res://Mapas/Cenas/game_over.tscn" id="6_spdja"]
+[ext_resource type="AudioStream" uid="uid://bb15gtrlvaiof" path="res://assets/som/Player_Sounds/8-bit-game-158815.mp3" id="7_g0r1d"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_tun0f")
+
+[node name="HUD" parent="." instance=ExtResource("2_obqrg")]
+
+[node name="Dino" parent="." instance=ExtResource("3_aelm2")]
+
+[node name="BG" parent="Dino" instance=ExtResource("1_immhq")]
+
+[node name="Ground" parent="." instance=ExtResource("5_n8kxl")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GameOver" parent="." instance=ExtResource("6_spdja")]
+process_mode = 2
+
+[node name="BG_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_g0r1d")
+volume_db = -10.0

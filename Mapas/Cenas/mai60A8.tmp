@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8t5p6ibntjjv"]
+
+[ext_resource type="Script" path="res://Mapas/Cenas/main.gd" id="1_a76eq"]
+[ext_resource type="PackedScene" uid="uid://cvkmwkjutl4hg" path="res://Mapas/Cenas/bg.tscn" id="1_immhq"]
+[ext_resource type="PackedScene" uid="uid://g6abfh76423r" path="res://Mapas/Cenas/ground.tscn" id="2_n1rd7"]
+[ext_resource type="PackedScene" uid="uid://8lm1ryoii6bj" path="res://Mapas/Cenas/dino.tscn" id="3_aelm2"]
+[ext_resource type="PackedScene" uid="uid://dgcnlpavvml5n" path="res://Mapas/Cenas/hud.tscn" id="5_p71ad"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_a76eq")
+
+[node name="BG" parent="." instance=ExtResource("1_immhq")]
+
+[node name="Dino" parent="." instance=ExtResource("3_aelm2")]
+position = Vector2(144, 456)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Ground" parent="." instance=ExtResource("2_n1rd7")]
+
+[node name="HUD" parent="." instance=ExtResource("5_p71ad")]
